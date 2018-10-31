@@ -1,0 +1,13 @@
+export const PLANETS_INDEX_REQUESTED = "Planets/INDEX_REQUESTED";
+export const PLANETS_INDEX_FAILED = "Planets/INDEX_FAILED";
+export const PLANETS_INDEX_SUCCEEDED = "Planets/INDEX_SUCCEEDED";
+
+export const PLANET_SELECTED = "Planet/SELECTED";
+
+export const PLANET_RESIDENTS_GET_REQUESTED = "PlanetsResidents/GET_REQUESTED";
+export const PLANET_RESIDENTS_GET_FAILED = "PlanetsResidents/GET_FAILED";
+export const PLANET_RESIDENTS_GET_SUCCEEDED = "PlanetsResidents/GET_SUCCEEDED";
+
+export const PEOPLE_INDEX_REQUESTED = "People/INDEX_REQUESTED";
+export const PEOPLE_INDEX_FAILED = "People/INDEX_FAILED";
+export const PEOPLE_INDEX_SUCCEEDED = "People/INDEX_SUCCEEDED";
