@@ -16,14 +16,17 @@ class PlanetInfo extends Component {
   render() {
     const { planet, residents, loading } = this.props;
     return (
-      <section>
-        <h2>Planet Info</h2>
+      <section className="planet-info">
         {planet && (
           <article>
-            <h3>{planet.name}</h3>
+            <h3>Planet Info</h3>
+
             <ul className="planets-specifications">
               <li> {`Diameter: ${planet.diameter} km`}</li>
+              <li> {`Gravity: ${planet.gravity} km`}</li>
               <li> {`Population: ${planet.population} people`}</li>
+              <li> {`Climate: ${planet.climate}`}</li>
+              <li> {`Terrain: ${planet.terrain}`}</li>
             </ul>
             {loading ? (
               <p className="loading-message">LOADING...</p>
@@ -60,7 +63,8 @@ const mapStateToProps = state => ({
   residents: state.planetResidentsCall.residents
 });
 const mapDispatchToPros = dispatch => ({
-  getResidents: residents => dispatch(planetResidentsGetRequested({ residents }))
+  getResidents: residents =>
+    dispatch(planetResidentsGetRequested({ residents }))
 });
 
 export default connect(

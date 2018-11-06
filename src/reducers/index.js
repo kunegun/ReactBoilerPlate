@@ -5,6 +5,7 @@ import planetInfo from "./planets/planetInfo";
 import planetResidentsCall from "./planets/planetResidentsCall";
 import peopleIndex from "./people/peopleIndex";
 import peopleIndexCall from "./people/peopleIndexCall";
+import peopleClick from "./people/peopleClick";
 
 const reducer = combineReducers({
   planetsIndex,
@@ -13,6 +14,7 @@ const reducer = combineReducers({
   planetResidentsCall,
   peopleIndex,
   peopleIndexCall,
+  peopleClick
 });
 
 export default reducer;

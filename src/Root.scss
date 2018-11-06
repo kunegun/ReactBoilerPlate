@@ -12,41 +12,95 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    padding: 0;
+    margin: 0;
+  }
+}
+a {
+  text-decoration: none;
+}
 
 .sw-app {
   text-align: center;
 }
-.sw-header {
+.header-list {
   display: flex;
+  justify-content: center;
   padding: 0;
-  li {
-    flex: 1;
-    list-style: none;
-    cursor: pointer;
+  .header-list-item {
+    flex: 0 1 150px;
     text-transform: uppercase;
-    padding: 10px 5px;
-    margin: 0 5px;
-    background: grey;
+    padding: 2px;
     a {
       display: block;
-      color: white;
-      text-decoration: none;
+      border: 2px solid grey;
+      color: darkslategrey;
+      padding: 10px 2px;
+      margin: 0;
+      &.active {
+        background: lightcoral;
+        border-color: lightcoral;
+        color: white;
+      }
     }
   }
 }
 
 .sw-container {
   display: flex;
-  section {
-    flex: 1;
+  justify-content: center;
+}
+.sw-list {
+  text-align: center;
+  &.planets-list {
+    text-align: right;
+  }
+  .sw-list-item {
+    width: 200px;
+    margin: 5px auto;
+    cursor: pointer;
+    border: none;
+    background: lighten(lightslategrey, 25%);
+    color: whitesmoke;
+    padding: 0;
+    &.selected {
+      background: yellowgreen;
+      color: darkslategrey;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .list-item-btn {
+    background: none;
+    border: none;
+    width: 100%;
+    color: inherit;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    &:focus {
+      outline: none;
+    }
   }
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  li {
-    padding: 5px;
+.planet-info {
+  text-align: left;
+  flex: 0 1 400px;
+  article {
+    background: lighten(yellowgreen, 40%);
+    padding: 20px 40px;
+    display: inline-block;
   }
 }

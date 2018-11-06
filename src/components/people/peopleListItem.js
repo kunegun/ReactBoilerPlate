@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const planetsListItem = ({ children, onClick }) => (
+const peopleListItem = ({ children, onClick }) => (
   <button type="submit" className="list-item-btn" onClick={onClick}>
     {children}
   </button>
 );
 
-planetsListItem.defaultProps = {
+peopleListItem.defaultProps = {
   onClick: () => {}
 };
-planetsListItem.propTypes = {
+peopleListItem.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired
 };
 
-export default planetsListItem;
+export default peopleListItem;
