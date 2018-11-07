@@ -6,6 +6,9 @@ const initState = {
 
 const planetInfoReducer = (state = initState, action) => {
   switch (action.type) {
+    case types.PLANETS_INDEX_REQUESTED: {
+      return { id: false };
+    }
     case types.PLANET_SELECTED: {
       const { id } = action.payload;
       return { id };

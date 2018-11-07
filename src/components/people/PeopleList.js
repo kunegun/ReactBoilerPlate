@@ -45,9 +45,9 @@ PlanetsList.propTypes = {
   clickPeople: PropTypes.func.isRequired
 };
 const mapStateToProps = state => ({
-  loading: state.peopleIndexCall.loading,
-  people: state.peopleIndex,
-  peopleClicked: state.peopleClick
+  loading: state.calls.peopleIndexCall.loading,
+  people: state.entities.peopleIndex,
+  peopleClicked: state.components.peopleClick
 });
 const mapDispatchToProps = dispatch => ({
   requestPeopleIndex: () => dispatch(peopleIndexRequested()),
