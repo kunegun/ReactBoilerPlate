@@ -55,14 +55,14 @@ PlanetInfo.propTypes = {
   getResidents: PropTypes.func.isRequired
 };
 const mapStateToProps = state => ({
-  loading: state.calls.planetResidentsCall.loading,
+  loading: state.calls.planetResidents.loading,
   id: state.components.planetInfo.id,
   planet: state.components.planetInfo.id
-    ? state.entities.planetsIndex.find(
+    ? state.entities.planets.find(
         p => p.name === state.components.planetInfo.id
       )
     : null,
-  residents: state.calls.planetResidentsCall.residents
+  residents: state.calls.planetResidents.residents
 });
 const mapDispatchToPros = dispatch => ({
   getResidents: residents =>

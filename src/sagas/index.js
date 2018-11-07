@@ -1,12 +1,10 @@
 import { spawn } from "redux-saga/effects";
-import planetsIndex from "./planets/planetsIndex";
-import planetResidentsGet from "./planets/planetResidentsGet";
-import peopleIndex from "./people/peopleIndex";
+import planets from "./planets";
+import people from "./people";
 
 const saga = function* saga() {
-  yield spawn(planetsIndex);
-  yield spawn(planetResidentsGet);
-  yield spawn(peopleIndex);
+  yield spawn(planets);
+  yield spawn(people);
 };
 
 export default saga;

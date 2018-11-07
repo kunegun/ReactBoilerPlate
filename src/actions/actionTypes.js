@@ -12,4 +12,4 @@ export const PEOPLE_INDEX_REQUESTED = "People/INDEX_REQUESTED";
 export const PEOPLE_INDEX_FAILED = "People/INDEX_FAILED";
 export const PEOPLE_INDEX_SUCCEEDED = "People/INDEX_SUCCEEDED";
 
-export const PEOPLE_CLICK = "People/CLICK";
+export const PERSON_SELECTED = "Person/SELECTED";

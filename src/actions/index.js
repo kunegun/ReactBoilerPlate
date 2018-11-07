@@ -13,4 +13,4 @@ export { default as peopleIndexFailed } from "./people/peopleIndexFailed";
 export { default as peopleIndexRequested } from "./people/peopleIndexRequested";
 export { default as peopleIndexSucceeded } from "./people/peopleIndexSucceeded";
 
-export { default as peopleClick } from "./people/peopleClick";
+export { default as personSelected } from "./people/personSelected";

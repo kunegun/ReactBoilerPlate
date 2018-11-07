@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { peopleIndexRequested, peopleClick } from "../../actions";
+import { peopleIndexRequested, personSelected } from "../../actions";
 import { PeopleListItem } from "..";
 
 class PlanetsList extends Component {
@@ -11,7 +11,7 @@ class PlanetsList extends Component {
   }
 
   render() {
-    const { loading, people, clickPeople, peopleClicked } = this.props;
+    const { loading, people, selectPerson, peopleClicked } = this.props;
     return (
       <section>
         <h2>Star Wars People</h2>
@@ -26,7 +26,7 @@ class PlanetsList extends Component {
                   : ""
               }`}
             >
-              <PeopleListItem onClick={() => clickPeople(p.name)}>
+              <PeopleListItem onClick={() => selectPerson(p.name)}>
                 {p.name}
               </PeopleListItem>
             </li>
@@ -42,16 +42,16 @@ PlanetsList.propTypes = {
   people: PropTypes.array.isRequired,
   peopleClicked: PropTypes.array.isRequired,
   requestPeopleIndex: PropTypes.func.isRequired,
-  clickPeople: PropTypes.func.isRequired
+  selectPerson: PropTypes.func.isRequired
 };
 const mapStateToProps = state => ({
-  loading: state.calls.peopleIndexCall.loading,
-  people: state.entities.peopleIndex,
-  peopleClicked: state.components.peopleClick
+  loading: state.calls.peopleIndex.loading,
+  people: state.entities.people,
+  peopleClicked: state.components.peopleList
 });
 const mapDispatchToProps = dispatch => ({
   requestPeopleIndex: () => dispatch(peopleIndexRequested()),
-  clickPeople: id => dispatch(peopleClick({ id }))
+  selectPerson: id => dispatch(personSelected({ id }))
 });
 
 export default connect(

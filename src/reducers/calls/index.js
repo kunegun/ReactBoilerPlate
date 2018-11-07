@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import peopleIndexCall from "./peopleIndexCall";
-import planetsIndexCall from "./planetsIndexCall";
-import planetResidentsCall from "./planetResidentsCall";
+import peopleIndex from "./peopleIndex";
+import planetsIndex from "./planetsIndex";
+import planetResidents from "./planetResidents";
 
 const reducer = combineReducers({
-  peopleIndexCall,
-  planetsIndexCall,
-  planetResidentsCall
+  peopleIndex,
+  planetsIndex,
+  planetResidents
 });
 
 export default reducer;

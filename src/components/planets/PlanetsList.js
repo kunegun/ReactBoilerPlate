@@ -82,10 +82,10 @@ PlanetsList.propTypes = {
   planetInfo: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
-  loading: state.calls.planetsIndexCall.loading,
-  page: state.components.planetsIndex.page,
-  count: state.components.planetsIndex.count,
-  planets: state.entities.planetsIndex,
+  loading: state.calls.planetsIndex.loading,
+  page: state.components.planetsList.page,
+  count: state.components.planetsList.count,
+  planets: state.entities.planets,
   planetInfo: state.components.planetInfo
 });
 const mapDispatchToProps = dispatch => ({

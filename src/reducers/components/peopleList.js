@@ -2,9 +2,9 @@ import * as types from "../../actions/actionTypes";
 
 const initState = [];
 
-const peopleClickReducer = (state = initState, action) => {
+const personSelectedReducer = (state = initState, action) => {
   switch (action.type) {
-    case types.PEOPLE_CLICK: {
+    case types.PERSON_SELECTED: {
       const { id } = action.payload;
       return state.some(p => p === id)
         ? state.filter(elem => elem !== id)
@@ -15,4 +15,4 @@ const peopleClickReducer = (state = initState, action) => {
   }
 };
 
-export default peopleClickReducer;
+export default personSelectedReducer;
