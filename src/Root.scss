@@ -24,6 +24,13 @@ ul {
 a {
   text-decoration: none;
 }
+button {
+  background: none;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
 
 .sw-app {
   text-align: center;
@@ -57,9 +64,7 @@ a {
 }
 .sw-list {
   text-align: center;
-  &.planets-list {
-    text-align: right;
-  }
+  height: inherit;
   .sw-list-item {
     width: 200px;
     margin: 5px auto;
@@ -94,7 +99,28 @@ a {
     }
   }
 }
+.list-pagination {
+  display: flex;
+  .list-pagination-btn {
+    background: lightcoral;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    cursor: pointer;
+    &.next {
+      margin-left: auto;
+    }
+  }
+}
 
+.planets-container {
+  width: 200px;
+}
+.planets-list {
+  text-align: right;
+  height: 310px;
+  width: 200px;
+}
 .planet-info {
   text-align: left;
   flex: 0 1 400px;
