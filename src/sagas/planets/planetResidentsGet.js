@@ -1,14 +1,21 @@
-import { all, call, put, spawn, takeLatest } from "redux-saga/effects";
+import { all, call, put, takeLatest } from "redux-saga/effects";
 import * as types from "../../actions/actionTypes";
-import { planetResidentsGetFailed, planetResidentsGetSucceeded } from "../../actions";
+import {
+  planetResidentsGetFailed,
+  planetResidentsGetSucceeded
+} from "../../actions";
 
 const planetResidentsGetRequestedApiCall = resident =>
   fetch(resident).then(response => response.json());
 
-const planetResidentsGetRequested = function* planetResidentsGetRequested(action) {
+const planetResidentsGetRequested = function* planetResidentsGetRequested(
+  action
+) {
   try {
     const residents = yield all(
-      action.payload.residents.map(r => call(planetResidentsGetRequestedApiCall, r))
+      action.payload.residents.map(r =>
+        call(planetResidentsGetRequestedApiCall, r)
+      )
     );
     yield put(planetResidentsGetSucceeded({ residents }));
   } catch (e) {
@@ -17,11 +24,10 @@ const planetResidentsGetRequested = function* planetResidentsGetRequested(action
 };
 
 const planetResidentsGetRequestedSaga = function* planetResidentsGetRequestedSaga() {
-  yield takeLatest(types.PLANET_RESIDENTS_GET_REQUESTED, planetResidentsGetRequested);
+  yield takeLatest(
+    types.PLANET_RESIDENTS_GET_REQUESTED,
+    planetResidentsGetRequested
+  );
 };
 
-const planetResidentsGetSaga = function* planetResidentsGetSaga() {
-  yield spawn(planetResidentsGetRequestedSaga);
-};
-
-export default planetResidentsGetSaga;
+export default planetResidentsGetRequestedSaga;

@@ -1,4 +1,4 @@
-import { call, put, spawn, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import * as types from "../../actions/actionTypes";
 import { peopleIndexFailed, peopleIndexSucceeded } from "../../actions";
 
@@ -20,8 +20,4 @@ const peopleIndexRequestedSaga = function* peopleIndexRequestedSaga() {
   yield takeLatest(types.PEOPLE_INDEX_REQUESTED, peopleIndexRequested);
 };
 
-const peopleIndexSaga = function* peopleIndexSaga() {
-  yield spawn(peopleIndexRequestedSaga);
-};
-
-export default peopleIndexSaga;
+export default peopleIndexRequestedSaga;

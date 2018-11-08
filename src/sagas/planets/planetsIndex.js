@@ -1,4 +1,4 @@
-import { call, put, spawn, takeLatest } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import * as types from "../../actions/actionTypes";
 import { planetsIndexFailed, planetsIndexSucceeded } from "../../actions";
 
@@ -24,8 +24,4 @@ const planetsIndexRequestedSaga = function* planetsIndexRequestedSaga() {
   yield takeLatest(types.PLANETS_INDEX_REQUESTED, planetsIndexRequested);
 };
 
-const planetsIndexSaga = function* planetsIndexSaga() {
-  yield spawn(planetsIndexRequestedSaga);
-};
-
-export default planetsIndexSaga;
+export default planetsIndexRequestedSaga;
