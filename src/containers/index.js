@@ -1,3 +1,4 @@
-export { default as Home } from "./home/Home";
-export { default as Planets } from "./planets/Planets";
-export { default as People } from "./people/People";
+export { default as Home } from "./Home";
+export { default as Planets } from "./Planets";
+export { default as People } from "./People";
+export { default as Species } from "./Species";

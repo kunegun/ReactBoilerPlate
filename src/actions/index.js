@@ -9,8 +9,20 @@ export { default as planetResidentsGetFailed } from "./planets/planetResidentsGe
 export { default as planetResidentsGetRequested } from "./planets/planetResidentsGetRequested";
 export { default as planetResidentsGetSucceeded } from "./planets/planetResidentsGetSucceeded";
 
+export { default as planetGetFailed } from "./planets/planetGetFailed";
+export { default as planetGetRequested } from "./planets/planetGetRequested";
+export { default as planetGetSucceeded } from "./planets/planetGetSucceeded";
+
+export { default as planetHomeworldSelected } from "./planets/planetHomeworldSelected";
+
 export { default as peopleIndexFailed } from "./people/peopleIndexFailed";
 export { default as peopleIndexRequested } from "./people/peopleIndexRequested";
 export { default as peopleIndexSucceeded } from "./people/peopleIndexSucceeded";
 
 export { default as personSelected } from "./people/personSelected";
+
+export { default as speciesIndexFailed } from "./species/speciesIndexFailed";
+export { default as speciesIndexRequested } from "./species/speciesIndexRequested";
+export { default as speciesIndexSucceeded } from "./species/speciesIndexSucceeded";
+
+export { default as speciesSelected } from "./species/speciesSelected";

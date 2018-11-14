@@ -2,6 +2,12 @@ import { call, put, takeLatest } from "redux-saga/effects";
 import * as types from "../../actions/actionTypes";
 import { planetsIndexFailed, planetsIndexSucceeded } from "../../actions";
 
+const mapPlanets = planets =>
+  planets.map(planet => {
+    const id = planet.url.split("/")[5];
+    return { ...planet, id };
+  });
+
 const planetsIndexRequestedApiCall = page =>
   fetch(`https://swapi.co/api/planets/?page=${page}`).then(response =>
     response.json()
@@ -14,7 +20,9 @@ const planetsIndexRequested = function* planetsIndexRequested(action) {
       planetsIndexRequestedApiCall,
       page
     );
-    yield put(planetsIndexSucceeded({ planets, page, count }));
+    yield put(
+      planetsIndexSucceeded({ planets: mapPlanets(planets), page, count })
+    );
   } catch (e) {
     yield put(planetsIndexFailed());
   }

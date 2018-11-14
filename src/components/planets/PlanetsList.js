@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { planetsIndexRequested, planetSelected } from "../../actions";
 import { PlanetsListItem } from "..";
 
+const ITEMS_PER_PAGE = 10;
+
 class PlanetsList extends Component {
   componentDidMount() {
     const { requestPlanetsIndex, page } = this.props;
@@ -18,9 +20,13 @@ class PlanetsList extends Component {
     return true;
   }
 
+  paginate(array, pageSize, pageNumber) {
+    --pageNumber; // because pages logically start with 1, but technically with 0
+    return array.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
+  }
+
   render() {
     const {
-      loading,
       planets,
       selectPlanet,
       planetInfo,
@@ -29,11 +35,12 @@ class PlanetsList extends Component {
       count
     } = this.props;
     const maxPage = Math.round(count / 10);
+    const itemsVisible = this.paginate(planets, ITEMS_PER_PAGE, page);
     return (
       <section className="planets-container">
         <div className="planets-list">
           <ul className="sw-list">
-            {planets.map(p => (
+            {itemsVisible.map(p => (
               <li
                 key={p.name}
                 className={`sw-list-item ${
@@ -73,7 +80,6 @@ class PlanetsList extends Component {
 }
 
 PlanetsList.propTypes = {
-  loading: PropTypes.bool.isRequired,
   page: PropTypes.number.isRequired,
   count: PropTypes.number.isRequired,
   planets: PropTypes.array.isRequired,

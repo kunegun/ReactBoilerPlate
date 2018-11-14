@@ -22,6 +22,7 @@ class PlanetInfo extends Component {
             <h3>Planet Info</h3>
 
             <ul className="planets-specifications">
+              <li> {`ID: ${planet.id}`}</li>
               <li> {`Diameter: ${planet.diameter} km`}</li>
               <li> {`Gravity: ${planet.gravity} km`}</li>
               <li> {`Population: ${planet.population} people`}</li>
